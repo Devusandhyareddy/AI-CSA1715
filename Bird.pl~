@@ -1,0 +1,21 @@
+% Define facts about birds and whether they can fly.
+bird(canary, yes).
+bird(ostrich, no).
+bird(sparrow, yes).
+bird(penguin, no).
+bird(eagle, yes).
+
+% Query to check if a bird can fly.
+can_fly(Bird) :-
+    bird(Bird, yes),
+    write(Bird), write(' can fly.'), nl.
+can_fly(Bird) :-
+    bird(Bird, no),
+    write(Bird), write(' cannot fly.'), nl.
+can_fly(Bird) :-
+    \+ bird(Bird, _),
+    write('Unknown bird: '), write(Bird), nl.
+
+% Example usage:
+% ?- can_fly(ostrich).
+% ostrich cannot fly.
